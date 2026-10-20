@@ -1,0 +1,127 @@
+% loosely based on a presentation template provided to me by Simon Dobnik, major alterations by Maria Irena Szawerna
+
+\documentclass[aspectratio=169, 15pt]{beamer}  % change 15 to another number to scale the font size in the whole presentation
+\usetheme{CambridgeUS}
+\usecolortheme{SB}
+
+% font
+\usepackage[T1]{fontenc}
+\usepackage{ragged2e}
+\usepackage{fontspec}
+\setsansfont[
+    Path = font/,
+    UprightFont = Jost-400-Book.ttf,
+    BoldFont = Jost-700-Bold.ttf,
+    ItalicFont = Jost-400-BookItalic.ttf,
+    BoldItalicFont = Jost-700-BoldItalic.ttf
+]{Jost-400-Book.ttf}
+
+% packages
+% some unnecessary for the template itself, but useful to have
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{ulem}
+\usepackage{xurl}
+\usepackage{enumerate}
+\usepackage{environ}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{multicol}
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{tabularray}
+\usepackage{hhline}
+\usepackage{arydshln}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{lipsum}
+\hyphenation{}
+\usepackage{natbib}
+\bibliographystyle{chicago}
+\renewcommand{\bibfont}{\tiny}
+
+% define SBOrange
+\definecolor{SBOrange}{RGB}{240, 88, 26}
+
+% triangle bullet points, regular enumerate items
+\setbeamertemplate{items}[triangle]
+\setbeamertemplate{enumerate items}[default]
+
+% colored hyperlinks
+\definecolor{links}{cmyk}{0.72,0.72,0,0.3}
+\hypersetup{colorlinks,linkcolor=,urlcolor=SBOrange,citecolor=SBOrange}
+\bibpunct{\color{SBOrange}(}{\color{SBOrange})}{;}{a}{,}{,}
+
+% graphics path
+\graphicspath{ {pic/} }
+
+% remove shadow
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+
+% logo, change comments for the other language logo
+\addtobeamertemplate{footline}{}{%
+    \begin{picture}(0,0)
+        \put(333,10){\includegraphics[width=4cm]{
+        sprakbanken_logo_slogan_sv.png
+        % sprakbanken_logo_slogan_en.png  
+        }}
+    \end{picture}
+}
+% lift contents to prevent overlap, remove navigation bar
+\addtobeamertemplate{footline}{\vspace{0.6cm}}{} 
+\setbeamertemplate{navigation symbols}{}
+
+% change comments for English; can insert other languages for other language versions
+\usepackage[
+swedish
+% english
+]{babel}
+
+% slides
+\title[Kort titel]{\textbf{Titel}}
+\subtitle{Också titel}
+\author[Namn]{Namn Namnsson \\ \texttt{namn.namsson@uni.se}}
+\institute[Språkbanken]{Språkbanken, Institutionen för svenska, flerspråkighet och språkteknologi, Göteborgs universitet}
+\date{\today}
+
+
+\begin{document}
+	\frame{\titlepage}
+
+\section{Section}  % leave empty / remove to remove this from the header
+\subsection{Subsection}  % same as above
+
+\begin{frame}{Titel}  % lägg till [allowframebreaks] om det är för mycket innehåll (funkar inte med columns)
+    Innehåll 
+\end{frame}
+
+\begin{frame}{Titel}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}  % uppdelningen kan justeras
+            \begin{itemize}
+                \item Ord
+                \item Flera ord
+                \begin{itemize}
+                    \item Ännu flera ord
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=1\linewidth]{sparv2.png}
+                \caption{Bild}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\subsection{Referenser}
+\begin{frame}[allowframebreaks,noframenumbering]{Referenser}
+    \normalem
+    \bibliography{references}
+
+\end{frame}
+
+\end{document}
+
