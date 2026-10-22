@@ -1,6 +1,6 @@
 % loosely based on a presentation template provided to me by Simon Dobnik, major alterations by Maria Irena Szawerna
 
-\documentclass[aspectratio=169, 15pt]{beamer}  % change 15 to another number to scale the font size in the whole presentation
+\documentclass[aspectratio=149, 15pt]{beamer}  % change 15 to another number to scale the font size in the whole presentation, aspectratio can also be changed but then the logo needs to be repositioned 
 \usetheme{CambridgeUS}
 \usecolortheme{SB}
 
@@ -58,10 +58,10 @@
 % remove shadow
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 
-% logo, change comments for the other language logo
-\addtobeamertemplate{footline}{}{%
+% logo, change comments for the other language logo; put(X,Y) determines the position, if you change the aspect ratio of the slides then you need to adjust the first number (X) to move the logo on the horizontal axis (e.g. for 16:9 a good position is 333).
+\addtobeamertemplate{footline}{}{
     \begin{picture}(0,0)
-        \put(333,10){\includegraphics[width=4cm]{
+        \put(275,10){\includegraphics[width=4cm]{  
         sprakbanken_logo_slogan_sv.png
         % sprakbanken_logo_slogan_en.png  
         }}
